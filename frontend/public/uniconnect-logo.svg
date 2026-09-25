@@ -1,0 +1,6 @@
+<svg width="512" height="512" viewBox="0 0 512 512" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="512" height="512" rx="120" fill="#0B1E8A"/>
+  <path d="M96 352C128 256 384 256 416 352" stroke="#F36C21" stroke-width="28" stroke-linecap="round"/>
+  <text x="256" y="310" text-anchor="middle" font-family="Poppins, sans-serif" font-size="210" font-weight="800" fill="#FFFFFF" letter-spacing="-12">UC</text>
+  <circle cx="410" cy="118" r="30" fill="#F36C21"/>
+</svg>
