@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import axios from "axios";
 import toast from "react-hot-toast";
 import API from "./Auth/axios";
+import API_BASE_URL from "../config";
 
 const ProjectCard = ({ project }) => {
   const [comments, setComments] = useState([]);
@@ -27,7 +28,7 @@ const ProjectCard = ({ project }) => {
       })
     : "Not available";
 
-  const imageUrls = projectImages.map((img) => `http://localhost:5000/uploads/${img}`);
+  const imageUrls = projectImages.map((img) => `${API_BASE_URL}/uploads/${img}`);
   const hasImages = imageUrls.length > 0;
   const activeImage = hasImages ? imageUrls[Math.min(activeImageIndex, imageUrls.length - 1)] : null;
 
@@ -43,7 +44,9 @@ const ProjectCard = ({ project }) => {
     }
 
     try {
-      const res = await axios.get(`http://localhost:5000/api/projects/comments/${project._id}`);
+      const res = await axios.get(
+        `${API_BASE_URL}/api/projects/comments/${project._id}`
+      );
       setComments(Array.isArray(res.data) ? res.data : []);
     } catch (error) {
       console.error("Error loading comments:", error);

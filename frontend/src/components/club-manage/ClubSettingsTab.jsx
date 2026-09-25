@@ -12,6 +12,7 @@ import {
   uploadClubConstitution,
   updateClubLogo,
 } from "../../services/clubService";
+import API_BASE_URL from "../../config";
 
 const categories = [
   "Engineering",
@@ -23,10 +24,6 @@ const categories = [
   "Sports",
   "Arts",
 ];
-
-const API_BASE_URL =
-  import.meta.env.VITE_API_URL?.replace(/\/api\/?$/, "") ||
-  "http://localhost:5000";
 
 const getCurrentUser = () => {
   try {

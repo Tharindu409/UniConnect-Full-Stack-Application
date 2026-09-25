@@ -4,7 +4,9 @@ import axios from 'axios';
 import { toast } from 'react-toastify';
 import { FaEdit, FaTrash, FaCalendarAlt, FaClock, FaMapMarkerAlt, FaUsers, FaEye, FaPlus } from 'react-icons/fa';
 
-const API_URL = import.meta.env.VITE_API_URL || 'http://localhost:5000';
+import API_BASE_URL from "../config";
+
+const API_URL = API_BASE_URL;
 
 const ManageEvents = () => {
   const [events, setEvents] = useState([]);

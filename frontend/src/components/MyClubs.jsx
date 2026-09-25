@@ -9,12 +9,9 @@ import {
   cancelJoinRequest,
   getClubDashboard,
 } from "../services/clubService";
+import API_BASE_URL from "../config";
 
 const normalizeText = (value) => String(value || "").trim().toLowerCase();
-
-const API_BASE_URL =
-  import.meta.env.VITE_API_URL?.replace(/\/api\/?$/, "") ||
-  "http://localhost:5000";
 
 const getImageSrc = (imageUrl) => {
   if (!imageUrl) return "";

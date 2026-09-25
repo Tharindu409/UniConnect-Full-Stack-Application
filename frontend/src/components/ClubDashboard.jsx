@@ -20,10 +20,7 @@ import { getClubMeetings } from "../services/clubmeetingService";
 import { getClubElections } from "../services/electionService";
 import { getClubMentors } from "../services/mentorshipService";
 import MentorshipSection from "../components/club-manage/MentorshipSection";
-
-const API_BASE_URL =
-  import.meta.env.VITE_API_URL?.replace(/\/api\/?$/, "") ||
-  "http://localhost:5000";
+import API_BASE_URL from "../config";
 
 const getImageSrc = (imageUrl) => {
   if (!imageUrl) return "";

@@ -13,6 +13,7 @@ import {
   approveExpense,
   rejectExpense,
 } from "../../services/expenseService";
+import API_BASE_URL from "../../config";
 
 const expenseCategories = [
   "Event",
@@ -78,10 +79,6 @@ const paymentMethods = [
   "Online Payment",
   "Other",
 ];
-
-const API_BASE_URL =
-  import.meta.env.VITE_API_URL?.replace(/\/api\/?$/, "") ||
-  "http://localhost:5000";
 
 const ClubExpenses = ({ clubId, club, membership, permissions }) => {
   const [expenses, setExpenses] = useState([]);

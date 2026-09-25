@@ -24,6 +24,7 @@ import {
   updateClubMemberRole,
   getClubMembers,
 } from "../../services/clubService";
+import API_BASE_URL from "../../config";
 
 import BudgetsTab from "./BudgetsTab";
 import Election from "./Election";
@@ -44,10 +45,6 @@ const roleOptions = [
   "PROJECT_COORDINATOR",
   "EXECUTIVE_COMMITTEE_MEMBER",
 ];
-
-const API_BASE_URL =
-  import.meta.env.VITE_API_URL?.replace(/\/api\/?$/, "") ||
-  "http://localhost:5000";
 
 const getStoredCurrentUser = () => {
   const keys = ["user", "currentUser", "authUser", "userInfo"];

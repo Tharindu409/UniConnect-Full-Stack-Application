@@ -10,6 +10,7 @@ import {
 } from "../../api/projectApi";
 import AdminPagesTopBar from "../AdminPagesTopBar";
 import toast from 'react-hot-toast';
+import API_BASE_URL from "../../config";
 
 export default function UploadProject() {
   const navigate = useNavigate();
@@ -317,7 +318,7 @@ export default function UploadProject() {
                         const imageUrls = Array.isArray(p.images)
                           ? p.images
                               .filter(Boolean)
-                              .map((img) => `http://localhost:5000/uploads/${img}`)
+                              .map((img) => `${API_BASE_URL}/uploads/${img}`)
                           : [];
 
                         return (
@@ -564,7 +565,7 @@ export default function UploadProject() {
                           ) : existingImages[idx] ? (
                             <div className="relative w-full h-full">
                               <img
-                                src={`http://localhost:5000/uploads/${existingImages[idx]}`}
+                                src={`${API_BASE_URL}/uploads/${existingImages[idx]}`}
                                 alt="existing"
                                 className="w-full h-full object-cover opacity-80"
                               />
